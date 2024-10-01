@@ -7,8 +7,7 @@ void DebugLogger::begin(unsigned long _baudRate) {
   } else {
     Serial.begin(115200);
   }
-
-  while(!Serial) {}
+  delay(100); // 100ms blocking delay for Serial to start
 }
 
 void DebugLogger::setLogging(bool isLogging) {
